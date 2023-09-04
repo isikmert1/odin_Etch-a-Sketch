@@ -1,1 +1,1 @@
-# odin_Etch-a-Sketch
+# This little project is a browser version of something between a sketchpad and an Etch-A-Sketch. Which helped me practice my DOM skills.
