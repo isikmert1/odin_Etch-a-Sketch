@@ -28,3 +28,42 @@ body {
     flex-wrap: wrap;
 }
 
+.gridOptionsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 8em;
+    align-items: center;
+}
+
+.gridSizeContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+}
+
+.eraserBtn {
+    padding: 0.4em 1.6em;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.eraserBtn:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+.eraserBtn:active {
+    background-color: lightgray;
+}
+
+.gridSizeText {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#gridSize {
+    font-size: 1em;
+}
+

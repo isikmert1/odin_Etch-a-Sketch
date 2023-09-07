@@ -15,3 +15,30 @@ function addGrid(gridCount) {
 }
 
 addGrid(16);
+
+const gridElement = document.querySelectorAll(".gridElement");
+const eraserBtn = document.querySelector(".eraserBtn");
+const gridSizeSelect = document.querySelectorAll('#gridSize');
+
+gridElement.forEach((element) => {
+    element.addEventListener("mouseover", (e) => {
+        e.target.style.backgroundColor = "black";
+    })
+})
+
+eraserBtn.addEventListener("click", clearChanges)
+
+function clearChanges() {
+    gridElement.forEach((element) => {
+        element.style.backgroundColor = "white";
+    })
+}
+
+//TODO
+
+function changeGridSize() {
+    gridSizeSelect.addEventListener('change', (event) => {
+        const selectedValue = event.target.value;
+        console.log('Selected value:', selectedValue);
+    });
+}
