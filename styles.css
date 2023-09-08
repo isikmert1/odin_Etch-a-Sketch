@@ -15,47 +15,29 @@ body {
 .main-title {
     font-size: 3rem;
     text-align: center;
-    flex: 1;
     margin-top: 1em;
+    color: #333333;
 }
 
 .gridContainer {
     box-shadow: 1px 1px 10px 2px lightgray;
-    width: 500px;
-    height: 500px;
-    margin: 2em auto;
+    width: 600px;
+    height: 600px;
+    margin: 2em auto 1em auto;
     display: flex;
     flex-wrap: wrap;
 }
 
-.gridOptionsContainer {
-    display: flex;
-    justify-content: center;
-    gap: 8em;
-    align-items: center;
+.gridElement {
+    user-select: none;
 }
 
 .gridSizeContainer {
     display: flex;
+    flex: 1;
     align-items: center;
     gap: 0.8em;
-}
-
-.eraserBtn {
-    padding: 0.4em 1.6em;
-    font-size: 1rem;
-    font-weight: 600;
-    border: 1px solid gray;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.eraserBtn:hover {
-    background-color: rgb(230, 230, 230);
-}
-
-.eraserBtn:active {
-    background-color: lightgray;
+    justify-content: center;
 }
 
 .gridSizeText {
@@ -67,3 +49,46 @@ body {
     font-size: 1em;
 }
 
+.settings {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5em;
+    gap: 2em;
+    width: 100%;
+}
+
+.btn {
+    padding: 0.5em 2em;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+.btn:active {
+    background-color: lightgray;
+}
+
+.btnActive {
+    color: white;
+    background-color: #333333;
+}
+
+.btnActive:hover,
+.btnActive:active {
+    color: white;
+    background-color: #333333;
+}
+
+@media screen and (max-width: 600px) {
+    .settings {
+        flex-direction: column;
+    }
+}
