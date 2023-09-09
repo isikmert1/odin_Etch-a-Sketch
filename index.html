@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;0,800;1,200&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <script src="https://kit.fontawesome.com/e6596a9400.js" crossorigin="anonymous"></script>
     <title>Etch-a-Sketch</title>
 </head>
 <body>
@@ -21,10 +22,23 @@
         </select> 
     </div>
     <div class="settings">
-        <button class="penBtn btn">Pen</button>
-        <button class="rainbowBtn btn">Rainbow</button>
-        <button class="clearBtn btn">Clear</button>
-        <button class="eraseBtn btn">Erase</button>
+        <button class="penBtn btn btnDeactive">Pen</button>
+        <button class="rainbowBtn btn btnDeactive">Rainbow</button>
+        <button class="eraseBtn btn btnDeactive">Erase</button>
+        <button class="clearBtn btn clearBtnActive">Clear</button>
     </div>
+    <script src="script.js" defer></script>
+    <footer class="footer">
+        <p>
+            Copyright ©
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            - <a href="https://github.com/isikmert1" target="_blank" style="color: #333333;">isikmert1</a>
+        </p>
+        <a href="https://github.com/isikmert1" target="_blank">
+            <i class="fab fa-github"></i
+        ></a>
+            </footer>
 </body>
 </html>

@@ -1,11 +1,8 @@
 function createGridElement(gridCount) {
     const div = document.createElement('div');
     div.classList.add('gridElement');
-    div.style.width = `${600 / gridCount}px`;
-    div.style.height = `${600 / gridCount}px`;
-    div.addEventListener("mouseover", (e) => {
-        e.target.style.backgroundColor = "black";
-    });
+    div.style.width = `calc(var(--grid-container-size) / ${gridCount})`;
+    div.style.height = `calc(var(--grid-container-size) / ${gridCount})`;
     return div;
 }
 
@@ -81,6 +78,29 @@ function changeGridSize(gridElement) {
                 gridCount = 16; 
         }
         addGrid(gridCount, gridElement);
+        resetButtonsToDeactive();
+        defaultButton();
+    });
+}
+
+function toggleButtonState(buttons) {
+    buttons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+            buttons.forEach((btn) => {
+                btn.classList.remove("btnActive");
+                btn.classList.add("btnDeactive");
+            });
+
+            e.target.classList.remove("btnDeactive");
+            e.target.classList.add("btnActive");
+        });
+    });
+}
+
+function resetButtonsToDeactive() {
+    btnDeactive.forEach((btn) => {
+        btn.classList.remove("btnActive");
+        btn.classList.add("btnDeactive");
     });
 }
 
@@ -88,13 +108,17 @@ const clearBtn = document.querySelector(".clearBtn");
 const eraseBtn = document.querySelector(".eraseBtn");
 const penBtn = document.querySelector(".penBtn");
 const rainbowBtn = document.querySelector(".rainbowBtn");
+const btnDeactive = document.querySelectorAll(".btnDeactive");
+
 const initialGridSize = 16;
 const gridElement = [];
-
-addGrid(initialGridSize, gridElement);
-changeGridSize(gridElement);
 
 clearBtn.addEventListener("click", () => clearChanges(gridElement));
 eraseBtn.addEventListener("click", () => eraseChanges(gridElement));
 penBtn.addEventListener("click", () => setPen(gridElement));
 rainbowBtn.addEventListener("click", () => setRainbowPen(gridElement));
+
+addGrid(initialGridSize, gridElement);
+changeGridSize(gridElement);
+toggleButtonState(btnDeactive);
+

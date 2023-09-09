@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    --grid-container-size: 600px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,24 +13,52 @@
     text-decoration: none;
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     background-color: #ededed;
+    /* footer support */
+    margin-bottom: 100px;
 }
 
 .main-title {
-    font-size: 3rem;
+    font-size: 3.3rem;
     text-align: center;
-    margin-top: 1em;
+    margin-top: 0.5em;
     color: #333333;
+    animation: colorRotate 6s linear 0s infinite;
+    text-decoration: underline;
+}
+
+@keyframes colorRotate {
+    from {
+        color: #6666ff;
+    }
+    10% {
+        color: #0099ff;
+    }
+    50% {
+        color: #00ff00;
+    }
+    75% {
+        color: #ff3399;
+    }
+    100% {
+        color: #6666ff;
+    }
 }
 
 .gridContainer {
-    box-shadow: 1px 1px 10px 2px lightgray;
-    width: 600px;
-    height: 600px;
+    box-shadow: 2px 2px 15px 5px lightgray;
+    width: var(--grid-container-size);
+    height: var(--grid-container-size);
     margin: 2em auto 1em auto;
     display: flex;
     flex-wrap: wrap;
+    cursor: crosshair;
 }
 
 .gridElement {
@@ -60,20 +93,29 @@ body {
 }
 
 .btn {
-    padding: 0.5em 2em;
+    padding: 0.5em;
+    text-align: center;
+    width: 150px;
     font-size: 1rem;
     font-weight: 600;
     border: 1px solid gray;
     border-radius: 10px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .btn:hover {
     background-color: rgb(230, 230, 230);
+    transform: scale(1.05);
 }
 
 .btn:active {
     background-color: lightgray;
+}
+
+.clearBtnActive:active {
+    color: white;
+    background-color: #333333;
 }
 
 .btnActive {
@@ -87,8 +129,94 @@ body {
     background-color: #333333;
 }
 
-@media screen and (max-width: 600px) {
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.fa-github {
+    color: #333333;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+@media screen and (max-width: 450px) {
+    :root {
+        --grid-container-size: 320px;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .gridContainer {
+        width: var(--grid-container-size);
+        height: var(--grid-container-size);
+    }
+
     .settings {
         flex-direction: column;
+        gap: 1em;
+    }
+
+    .btn {
+        width: 120px;
+    }
+
+    .footer {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 600px) {
+    :root {
+        --grid-container-size: 400px;
+    }
+
+    .main-title {
+        font-size: 2.8rem;
+    }
+
+    .gridContainer {
+        width: var(--grid-container-size);
+        height: var(--grid-container-size);
+    }
+
+    .settings {
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    .footer {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 720px) {
+    .btn {
+        width: 120px;
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    :root {
+        --grid-container-size: 800px;
+    }
+
+    .gridContainer {
+        width: var(--grid-container-size);
+        height: var(--grid-container-size);
     }
 }
