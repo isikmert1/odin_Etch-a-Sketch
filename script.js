@@ -79,7 +79,6 @@ function changeGridSize(gridElement) {
         }
         addGrid(gridCount, gridElement);
         resetButtonsToDeactive();
-        defaultButton();
     });
 }
 
