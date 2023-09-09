@@ -92,6 +92,19 @@ body {
     width: 100%;
 }
 
+.colorSelectionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.2em auto;
+    gap: 0.5em;
+}
+
+.colorSelectPara {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
 .btn {
     padding: 0.5em;
     text-align: center;
@@ -164,6 +177,10 @@ body {
     .gridContainer {
         width: var(--grid-container-size);
         height: var(--grid-container-size);
+    }
+
+    .colorSelectPara {
+        font-size: 0.8rem;
     }
 
     .settings {

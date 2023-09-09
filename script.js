@@ -38,7 +38,7 @@ function eraseChanges(gridElement) {
 function setPen(gridElement) {
     gridElement.forEach((element) => {
         element.addEventListener("mouseover", (e) => {
-            e.target.style.backgroundColor = 'black';
+            e.target.style.backgroundColor = selectedColor;
         });
     })
 }
@@ -108,14 +108,20 @@ const eraseBtn = document.querySelector(".eraseBtn");
 const penBtn = document.querySelector(".penBtn");
 const rainbowBtn = document.querySelector(".rainbowBtn");
 const btnDeactive = document.querySelectorAll(".btnDeactive");
+const colorPicker = document.getElementById('colorPicker');
 
 const initialGridSize = 16;
 const gridElement = [];
+let selectedColor = 'black';
 
 clearBtn.addEventListener("click", () => clearChanges(gridElement));
 eraseBtn.addEventListener("click", () => eraseChanges(gridElement));
 penBtn.addEventListener("click", () => setPen(gridElement));
 rainbowBtn.addEventListener("click", () => setRainbowPen(gridElement));
+colorPicker.addEventListener('input', (event) => {
+    selectedColor = event.target.value;
+});
+
 
 addGrid(initialGridSize, gridElement);
 changeGridSize(gridElement);
